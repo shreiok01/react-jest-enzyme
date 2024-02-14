@@ -20,8 +20,8 @@ const findByTestAttribute = (wrapper, value) =>
 
 test("render without errors", () => {
   const wrapper = setup();
-  const appComponent = findByTestAttribute(wrapper, "component-counter");
-  expect(appComponent.length).toBe(1);
+  const CounterComponent = findByTestAttribute(wrapper, "component-counter");
+  expect(CounterComponent.length).toBe(1);
 });
 
 test("renders counter display", () => {
