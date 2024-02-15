@@ -1,10 +1,14 @@
 import React from "react";
-import Counter from "./Counter/Counter";
+// import Counter from "./Counter/Counter";
+import Jotto from "./Jotto/Jotto";
 
-export const App = () => {
+const App = () => {
   return (
-    <div data-test="component-app">
-      <Counter />
+    <div data-test="component-app" className="jotto">
+      {/* <Counter /> */}
+      <Jotto />
     </div>
   );
 };
+
+export default App

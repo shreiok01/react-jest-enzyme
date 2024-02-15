@@ -11,13 +11,13 @@ configure({ adapter: new Adapter() });
  * @returns {ShallowWrapper}
  */
 
-const setup = () => shallow(<Jotto />);
+const setup = (props = {}) => shallow(<Jotto {...props} />);
 
 const findByTestAttribute = (wrapper, value) =>
   wrapper.find(`[data-test='${value}']`);
 
-test('render without errors', () => { 
+test("render without errors", () => {
   const wrapper = setup();
-  const JottoComponent = findByTestAttribute(wrapper, 'component-jotto')
-  expect(JottoComponent).toBe(1)
- })
+  const JottoComponent = findByTestAttribute(wrapper, "component-jotto");
+  expect(JottoComponent.length).toBe(1);
+});
