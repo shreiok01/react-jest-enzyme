@@ -7,6 +7,12 @@ import { checkProps, findByTestAttribute } from "../../../tests/utils";
 const defaultProps = {success: false}
 
 
+/**
+ * Factory function to create Shallow Wrapper for the App Component.
+ * @function setup
+ * @returns {ShallowWrapper}
+ */
+
 const setup = (props = {}) => {
   const setupProps = {...defaultProps, ...props}
   return shallow(<Congrats {...setupProps} />);
