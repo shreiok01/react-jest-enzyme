@@ -1,14 +1,18 @@
 import React from "react";
-// import Counter from "./Counter/Counter";
-import Jotto from "./Jotto/Jotto";
+import Congrats from "./Jotto/components/Congrats/Congrats";
+import GuessedWords from "./Jotto/components/GuessedWords/GuessedWords";
 
 const App = () => {
   return (
-    <div data-test="component-app" className="jotto">
+    <div data-test="component-app" className="container">
       {/* <Counter /> */}
-      <Jotto />
+      <h1>Jotto</h1>
+      <Congrats success={true} />
+      <GuessedWords
+        guessedWords={[{ guessedWord: "train", letterMatchCount: 3 }]}
+      />
     </div>
   );
 };
 
-export default App
+export default App;
