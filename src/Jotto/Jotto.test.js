@@ -6,7 +6,7 @@ import Jotto from "./Jotto";
 configure({ adapter: new Adapter() });
 
 /**
- * Factory function to create Shallow Wrapper for the App Component.
+ * Factory function to create Shallow Wrapper for the Jotto Component.
  * @function setup
  * @returns {ShallowWrapper}
  */

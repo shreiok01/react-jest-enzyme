@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import Counter from "./Counter";
 
 /**
- * Factory function to create Shallow Wrapper for the App Component.
+ * Factory function to create Shallow Wrapper for the Counter Component.
  * @function setup
  * @returns {ShallowWrapper}
  */

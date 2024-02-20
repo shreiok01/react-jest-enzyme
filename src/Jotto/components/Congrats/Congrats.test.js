@@ -8,7 +8,7 @@ const defaultProps = {success: false}
 
 
 /**
- * Factory function to create Shallow Wrapper for the App Component.
+ * Factory function to create Shallow Wrapper for the Congrats Component.
  * @function setup
  * @returns {ShallowWrapper}
  */
