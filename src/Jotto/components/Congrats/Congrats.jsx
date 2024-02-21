@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Congrats.css'
 
 /**
  * Functional react component for congratulatory message.
@@ -10,10 +11,11 @@ import PropTypes from "prop-types";
 const Congrats = (props) => {
   if (props.success) {
     return (
-      <div data-test="component-congrats" className="alert alert-success">
+      <div data-test="component-congrats" className="alert alert-success msg">
         <span data-test="congrats-message">
           Congratulations! You guessed the word!
         </span>
+        <i className="bi bi-x-circle cross"></i>
       </div>
     );
   } else {
