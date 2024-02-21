@@ -8,6 +8,12 @@ import { checkProps, findByTestAttribute } from "../../../../tests/utils";
  * @function setup
  * @returns {ShallowWrapper}
  */
+const mockSetCurrentGuess = jest.fn();
+
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
+  useState:(initialState) => [initialState, mockSetCurrentGuess]
+}));
 
 const setup = (secretWord = "party") => {
   return shallow(<Input secretWord={secretWord} />);
@@ -25,8 +31,6 @@ test("does not throw warning with expected props", () => {
 
 describe("state controlled input field", () => {
   test("state updates with value of input box", () => {
-    const mockSetCurrentGuess = jest.fn();
-    React.useState = jest.fn(() => ["", mockSetCurrentGuess]);
 
     const wrapper = setup();
     const inputBox = findByTestAttribute(wrapper, "input-box");
@@ -34,6 +38,6 @@ describe("state controlled input field", () => {
     const mockEvent = { target: { value: "train" } };
     inputBox.simulate("change", mockEvent);
 
-    expect(mockSetCurrentGuess).toHaveBeenCalledWith('train')
+    expect(mockSetCurrentGuess).toHaveBeenCalledWith("train");
   });
 });
