@@ -8,12 +8,6 @@ import { checkProps, findByTestAttribute } from "../../../../tests/utils";
  * @function setup
  * @returns {ShallowWrapper}
  */
-const mockSetCurrentGuess = jest.fn();
-
-jest.mock("react", () => ({
-  ...jest.requireActual("react"),
-  useState:(initialState) => [initialState, mockSetCurrentGuess]
-}));
 
 const setup = (secretWord = "party") => {
   return shallow(<Input secretWord={secretWord} />);
@@ -30,14 +24,34 @@ test("does not throw warning with expected props", () => {
 });
 
 describe("state controlled input field", () => {
-  test("state updates with value of input box", () => {
+  let wrapper;
+  let mockSetCurrentGuess = jest.fn();
+  let originalUseState;
 
-    const wrapper = setup();
+  beforeEach(() => {
+    mockSetCurrentGuess.mockClear();
+    originalUseState = React.useState;
+    React.useState = () => ["", mockSetCurrentGuess];
+    wrapper = setup();
+  });
+
+  afterEach(() => {
+    React.useState = originalUseState;
+  });
+
+  test("state updates with value of input box", () => {
     const inputBox = findByTestAttribute(wrapper, "input-box");
 
     const mockEvent = { target: { value: "train" } };
     inputBox.simulate("change", mockEvent);
 
     expect(mockSetCurrentGuess).toHaveBeenCalledWith("train");
+  });
+
+  test("field is cleared upon submit button click", () => {
+    const submitButton = findByTestAttribute(wrapper, "submit-button");
+
+    submitButton.simulate("click", { preventDefault() {}});
+    expect(mockSetCurrentGuess).toHaveBeenCalledWith("");
   });
 });
