@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "random word server",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --forceExit"
+  },
+  "author": "Shreyansh Vyas",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "supertest": "^3.0.0"
+  }
+}
