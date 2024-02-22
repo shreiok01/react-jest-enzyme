@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Input.css'
 
 const Input = ({ success, secretWord }) => {
   const [currentGuess, setCurrentGuess] = React.useState("");
@@ -9,11 +10,11 @@ const Input = ({ success, secretWord }) => {
   }
   return (
     <div data-test="component-input">
-      <form action="" className="form-inline">
+      <form action="" className="card">
         <input
           type="text"
           data-test="input-box"
-          className="mb-2 mx-sm-3"
+          className="mb-2 mx-sm-3 input-field"
           placeholder="enter your guess"
           value={currentGuess}
           onChange={(event) => setCurrentGuess(event.target.value)}
@@ -26,7 +27,7 @@ const Input = ({ success, secretWord }) => {
             setCurrentGuess("");
           }}
           data-test="submit-button"
-          className="btn btn-primary mb-2"
+          className="btn"
         >
           Submit
         </button>
