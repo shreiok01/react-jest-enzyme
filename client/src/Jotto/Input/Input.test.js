@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Input from "./Input";
-import { checkProps, findByTestAttribute } from "../../../../tests/utils";
+import { checkProps, findByTestAttribute } from "../../../tests/utils";
 
 /**
  * Factory function to create Shallow Wrapper for the Input Component.

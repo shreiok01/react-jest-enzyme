@@ -1,8 +1,8 @@
 import React from "react";
-import Congrats from "./Jotto/components/Congrats/Congrats";
-import GuessedWords from "./Jotto/components/GuessedWords/GuessedWords";
+import Congrats from "./Jotto/Congrats/Congrats";
+import GuessedWords from "./Jotto/GuessedWords/GuessedWords";
 import "./App.css";
-import Input from "./Jotto/components/Input/Input";
+import Input from "./Jotto/Input/Input";
 const App = () => {
   // TODO get props from shared state
   const success = false;
