@@ -15,9 +15,22 @@
   margin-top: 20px;
 }
 .heading {
-  margin-bottom: 20px;
   font-family: "Inter", sans-serif;
   font-size: calc(1.6rem + 0.4vw);
-  font-weight: bold;
+  font-weight:500;
+  margin-bottom: 0;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mr {
+  margin-right: 20px;
+}
+
+.md {
+  font-size: 25px;
 }
 

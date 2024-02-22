@@ -10,7 +10,10 @@ const App = () => {
   const guessedWords = [];
   return (
     <div data-test="component-app" className="mx-md">
-      <h1>Jotto</h1>
+      <div className="flex">
+        <h1 className="heading mr">Jotto</h1>
+        <i className="bi bi-cup-hot-fill md"></i>
+      </div>
       <Congrats success={success} />
       <Input success={success} secretWord={secretWord} />
       <GuessedWords guessedWords={guessedWords} />
