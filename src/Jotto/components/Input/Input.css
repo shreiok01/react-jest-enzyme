@@ -1,7 +1,7 @@
 .input-field {
   box-sizing: border-box;
   border: 3px solid currentColor;
-  padding: calc(0.5rem * 1.5) 0.5rem;
+  padding: calc(0.5rem * 0.9) 0.5rem;
   color: currentColor;
   background: transparent;
   font-weight: 900;
@@ -19,7 +19,7 @@
 }
 .btn {
   border: 3px solid currentColor;
-  padding: calc(0.5rem * 1.5) 0.5rem;
+  padding: calc(0.5rem * 0.9) 0.5rem;
   border-radius: 20px;
   font-weight: 900;
   background-color: #fff;
